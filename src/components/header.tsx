@@ -47,8 +47,8 @@ export const Header = () => {
     ));
 
   return (
-    <header className="w-full px-4 md:px-8 lg:px-20">
-      <nav className=" mx-auto md:py-5 flex items-center gap-[300px]">
+    <header className="w-full px-5 md:px-8 lg:px-20">
+      <nav className=" mx-auto md:py-5 flex items-center lg:justify-normal justify-between lg:gap-[300px] w-full">
         <Link href="/">
           <Image
             src="/logo.png"
@@ -57,26 +57,26 @@ export const Header = () => {
             alt="Logo"
             className="w-full h-full object-contain hidden lg:block"
           />
-
-          {/* <Image
+          <Image
             src="/logo.png"
-            width={100}
-            height={100}
+            width={80}
+            height={80}
             alt="Logo"
-            className=" object-contain block lg:hidden"
+            className=" object-contain flex lg:hidden mt-2"
             onClick={() => setOpen(false)}
-          /> */}
+          />
         </Link>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="absolute top-0 left-0 w-full bg-sarGrey p-4 pb-10">
+          <div className="absolute top-0 left-0 w-full bg-sarGrey p-4 z-10">
             <Image
               src="/logo.png"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
               alt="Logo"
-              className="w-[70px] h-[70px] object-contain hidden lg:block"
+              className=" object-contain flex lg:hidden mb-7"
+              onClick={() => setOpen(false)}
             />
             {renderNavLinks()}
           </div>
@@ -87,7 +87,7 @@ export const Header = () => {
           {renderNavLinks()}
         </div>
 
-        <div className="block lg:hidden mt-2">
+        <div className="block lg:hidden mt-2 z-20">
           <Hamburger toggled={isOpen} toggle={setOpen} />
         </div>
       </nav>

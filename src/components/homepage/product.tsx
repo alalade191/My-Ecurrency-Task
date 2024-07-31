@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
-import { products, review } from "./dummydata";
+import { products } from "./dummydata";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export const Product = () => {
   const stars = [
@@ -11,11 +13,16 @@ export const Product = () => {
     "/star.svg",
   ];
   return (
-    <section className="w-full lg:pl-20 pl-0 lg:px-0  lg:pb-[225px] pb-[100px] flex flex-col items-center justify-center gap-12">
+    <section className="w-full lg:pl-20 pl-0 lg:px-0  lg:pb-[225px] pb-[100px] flex flex-col lg:items-start lg:justify-normal items-center justify-center gap-12">
       <h2 className="text-kelp font-bold lg:text-4xl text-3xl">
         Product Reviews
       </h2>
-      <div className="flex lg:flex-row flex-col lg:items-start items-center lg:justify-between gap-5 lg:gap-0 justify-center w-full">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="flex lg:flex-row flex-col lg:items-start items-center lg:justify-between gap-5 lg:gap-0 justify-center w-full"
+      >
         {products.map((item, idx) => (
           <div
             className="w-[306px] lg:h-[420px] h-[300px] bg-white shadow-custom-shadow rounded-md p-5 flex flex-col gap-4"
@@ -53,7 +60,7 @@ export const Product = () => {
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 
@@ -32,7 +33,6 @@ export const Footer = () => {
               <p>Jobs</p>
             </div>
           </div>
-          {/* contact */}
           <div className="lg:flex hidden flex-col gap-[24px]">
             <h3 className="font-semibold text-base">CONTACT</h3>
             <div className="flex flex-col gap-[17px]">
@@ -54,7 +54,6 @@ export const Footer = () => {
                 <p>Jobs</p>
               </div>
             </div>
-            {/* contact */}
             <div className="flex flex-col gap-[24px]">
               <h3 className="font-semibold text-base">CONTACT</h3>
               <div className="flex flex-col gap-[17px]">

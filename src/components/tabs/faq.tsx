@@ -1,3 +1,4 @@
+"use client";
 import {
   Accordion,
   AccordionContent,
@@ -59,7 +60,7 @@ export const FaqAccordian = () => {
       <Accordion className=" " type="single" collapsible>
         {questionsAndAnswers.map((item, idx) => (
           <AccordionItem key={idx} value={String(idx)}>
-            <AccordionTrigger className="font-normal text-base">
+            <AccordionTrigger className="font-normal text-base text-nowrap">
               {item.question}
             </AccordionTrigger>
             <AccordionContent className="font-normal text-base ">
@@ -69,44 +70,5 @@ export const FaqAccordian = () => {
         ))}
       </Accordion>
     </div>
-    // <div className="">
-    //   <div className="mx-auto space-y-4 md:space-y-6">
-    //     {questionsAndAnswers.map((item, index) => (
-    //       <motion.div
-    //         key={index}
-    //         className={`border-t-[0.83px] transition-all duration-300 ease-in-out p-[10.65px] md:p-[20px] ${
-    //           activeTab === index
-    //             ? " border-t-[#BDBDBD]"
-    //             : " border-t-[#BDBDBD] "
-    //         }`}
-    //         initial={{ opacity: 0, y: 20 }}
-    //         animate={{ opacity: 1, y: 0 }}
-    //         transition={{ duration: 0.5, delay: index * 0.1 }}
-    //       >
-    //         <button
-    //           className="flex items-center justify-between w-full"
-    //           onClick={() => toggleTab(index)}
-    //         >
-    //           <span
-    //             className={`text-[14px] leading-[20px] md:text-[20px]  md:leading-[34.1px] text-start w-full mr-8 ${
-    //               activeTab === index
-    //                 ? "text-white font-[700]"
-    //                 : "text-[#242424] font-[500]"
-    //             }`}
-    //           >
-    //             {item.question}
-    //           </span>
-    //         </button>
-    //         {activeTab === index && (
-    //           <div className=" mt-2 md:mt-4 mr-8">
-    //             <p className="text-blue-400 font-[400] md:leading-[28px] leading-[18px] text-[12px] md:text-[16px]">
-    //               {item.answer}
-    //             </p>
-    //           </div>
-    //         )}
-    //       </motion.div>
-    //     ))}
-    //   </div>
-    // </div>
   );
 };

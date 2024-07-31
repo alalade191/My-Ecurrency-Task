@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import { review } from "./dummydata";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export const Review = () => {
   const stars = [
@@ -11,7 +13,12 @@ export const Review = () => {
     "/star.svg",
   ];
   return (
-    <div className="w-full flex flex-col items-center justify-center">
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: 0.4 }}
+      className="w-full flex flex-col items-center justify-center lg:pt-[152px] pt-[100px]"
+    >
       <div className="lg:flex-row flex flex-col gap-5 lg:gap-0 lg:items-start items-center lg:justify-between justify-center w-full lg:pl-20 pl-0">
         {review.map((item, idx) => (
           <div
@@ -38,6 +45,6 @@ export const Review = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
